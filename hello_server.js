@@ -22,6 +22,17 @@ app.get('/jedi/:firstname/:lastname', function(request, response) {
 	response.send(["Hello", last.substring(0, 2) + first.substring(0, 3)].join(" "));
 });
 
+app.get('/json', function(request, response) {
+	response.json({
+		name: 'Kim Gordon',
+		instrument: 'Bass'
+	});
+});
+
+app.get('/t', function(request, response) {
+	response.send(request.headers);
+});
+
 
 app.listen(8080);
 
